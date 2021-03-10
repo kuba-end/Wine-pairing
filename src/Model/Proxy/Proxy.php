@@ -7,14 +7,15 @@ namespace KubaEnd\Model\Proxy;
 
 use KubaEnd\Model\Proxy\Interfaces\SubjectInterface;
 use KubaEnd\Model\UniversalConnect;
+use PDO;
 
 
 class Proxy implements SubjectInterface
 {
-    private $tableMaster;
-    private $hookup;
-    private $logGood;
-    private $realSubject;
+    private string $tableMaster;
+    private  $hookup;
+    private bool $logGood;
+    private object $realSubject;
 
     public function login($uNow,$pNow){
         $uname=$uNow;
@@ -23,25 +24,24 @@ class Proxy implements SubjectInterface
         $this->tableMaster="logProxy";
         $this->hookup=UniversalConnect::doConnect();
 
-        $sql= "select uname, pw FROM $this->tableMaster where uname='$uname'";
+        $sql= "select uname, pw FROM proxyLog where uname=:uname";
+        $stmt = $this->hookup->prepare($sql);
+        $stmt->bindValue("uname",$uname);
+        $stmt->execute();
+        $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($result=$this->hookup->query($sql)){
-            $row=$result->fetchAll(PDO::FETCH_ASSOC);
-            if ($row['pw']==$pw){
-                $this->logGood=true;
+        foreach ($result as $row) {
+                if ($row['pw'] == $pw) {
+                    $this->logGood = true;
+                }
             }
-            $result=null;
-        }
-        elseif (($result=$this->hookup->query($sql)===false)){
-            printf("Error: %s",$this->hookup->errorCode());
-            exit();
-        }
+
             $this->hookup=null;
         if ($this->logGood){
             $this->request();
         }
         else{
-            'Wrong pass or login provided';
+            echo 'Wrong pass or login provided';
         }
     }
 

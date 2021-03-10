@@ -1,12 +1,14 @@
 <?php
 declare(strict_types=1);
 
+namespace KubaEnd\Controller;
 
 use KubaEnd\Model\Proxy\Proxy;
 use KubaEnd\Model\Proxy\Interfaces\SubjectInterface;
 use KubaEnd\Model\UniversalConnect;
+use PDO;
 
-class Dupa
+class Client
 {
     private $uname;
     private $pw;
@@ -26,7 +28,6 @@ class Dupa
     }
     private function getInterface(SubjectInterface $proxy){
         $proxy->login($this->uname,$this->pw);
-        echo $this->uname." ".$this->pw;
+
     }
 }
-$worker = new Dupa();

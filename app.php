@@ -1,11 +1,13 @@
 <?php
 
+
 require __DIR__.'/vendor/autoload.php';
 
-use KubaEnd\View\Dupa;
+use KubaEnd\Controller\Client;
+
 
 
 //$worker = new InsertInto();
 //$worker = new Dupa();
-$worker = new \KubaEnd\Model\Proxy\HashRegister();
+$worker = new Client();
 //header("Location: http://localhost/wine/src/View/add.html");
