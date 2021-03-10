@@ -1,0 +1,20 @@
+{
+    "name": "ciecierzyca/wine",
+    "description": "Web app for pairing wine with food",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rudzinski",
+            "email": "kontakt@kubarudzinski.pl"
+        }
+    ],
+    "require": {
+      "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "KubaEnd\\": "src/"
+        }
+    }
+}
