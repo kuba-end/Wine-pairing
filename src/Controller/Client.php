@@ -3,31 +3,29 @@ declare(strict_types=1);
 
 namespace KubaEnd\Controller;
 
-use KubaEnd\Model\Proxy\Proxy;
-use KubaEnd\Model\Proxy\Interfaces\SubjectInterface;
+use KubaEnd\Model\Proxy\Interfaces\WineInterface;
 use KubaEnd\Model\UniversalConnect;
 use PDO;
 
 class Client
 {
-    private $uname;
-    private $pw;
-    private $proxy;
+    private $tableMaster;
+    private $search;
+    private $query;
     /**
      * @var object|PDO
      */
     private $hookup;
 
     public function __construct(){
-        $this->tableMaster="proxyLog";
+        $this->tableMaster="wines_strains";
         $this->hookup=UniversalConnect::doConnect();
-        $this->uname=filter_var(($_POST['uname']),FILTER_SANITIZE_STRING);
-        $this->pw=filter_var(($_POST['pw']),FILTER_SANITIZE_STRING);
-        $this->getInterface($this->proxy=new Proxy());
+        $this->search=($_POST['search']);
+        $this->getInterface($this->query=new FetchResult());
 
     }
-    private function getInterface(SubjectInterface $proxy){
-        $proxy->login($this->uname,$this->pw);
+    private function getInterface(WineInterface $query){
+        $query->getWine($this->search);
 
     }
 }

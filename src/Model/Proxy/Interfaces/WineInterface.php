@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace KubaEnd\Model\Proxy\Interfaces;
 
 
-interface SubjectInterface
+interface WineInterface
 {
-    public function request();
+    public function getWine($wine);
 }

@@ -1,0 +1,38 @@
+body{
+    background-color: darkred;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 5vw;
+    grid-auto-rows: minmax(5vh,auto);
+}
+.header{
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 3vh;
+    text-align: center;
+    font-size: 25px;
+    color: whitesmoke;
+}
+.input{
+    grid-column: 2;
+    grid-row: 3;
+    text-align: center;
+    margin-bottom: 10vh;
+}
+.input__search{
+    grid-column: 2;
+    grid-row: 3;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 25px;
+}
+.input__submit{
+    grid-column: 2;
+    grid-row: 4;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 1vw;
+    background-color: #ffe4b5;
+}

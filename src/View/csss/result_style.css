@@ -1,0 +1,24 @@
+body{
+    background-color: #ffe4b5;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 5vw;
+    grid-auto-rows: minmax(5vh,auto);
+}
+.header{
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 3vh;
+    text-align: center;
+    font-size: 25px;
+    color: darkred;
+}
+.result{
+    grid-column: 2;
+    grid-row: 2;
+    text-align: center;
+    padding: 3vw;
+}
+
