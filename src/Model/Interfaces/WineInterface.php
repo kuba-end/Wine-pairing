@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 
-namespace KubaEnd\Model\Proxy\Interfaces;
+namespace KubaEnd\Model\Interfaces;
 
 
 interface WineInterface

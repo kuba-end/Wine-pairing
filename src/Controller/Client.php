@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace KubaEnd\Controller;
 
-use KubaEnd\Model\Proxy\Interfaces\WineInterface;
+use KubaEnd\Model\Interfaces\WineInterface;
 use KubaEnd\Model\UniversalConnect;
 use PDO;
 
@@ -20,7 +20,11 @@ class Client
     public function __construct(){
         $this->tableMaster="wines_strains";
         $this->hookup=UniversalConnect::doConnect();
-        $this->search=($_POST['search']);
+        if (isset($_POST['chooseR'])) {
+            $this->search = ($_POST['chooseR']);
+        } else {
+            $this->search = ($_POST['chooseW']);
+        }
         $this->getInterface($this->query=new FetchResult());
 
     }

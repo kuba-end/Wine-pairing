@@ -17,22 +17,20 @@ body{
 }
 .input{
     grid-column: 2;
-    grid-row: 3;
     text-align: center;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
-.input__search{
-    grid-column: 2;
-    grid-row: 3;
-    text-align: center;
-    font-size: 30px;
-    border-radius: 25px;
-}
-.input__submit{
-    grid-column: 2;
-    grid-row: 4;
+.input__color{
     border-radius: 25px;
     font-size: 20px;
     padding: 1vw;
     background-color: #ffe4b5;
+    cursor: pointer;
+}
+.input__submit{
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 1vw;
+    background-color: #ffe4b5;
+    cursor: pointer;
 }
