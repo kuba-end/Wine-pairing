@@ -9,7 +9,7 @@
     <div class="container">
         <header class="header">There is a list of <b>
                 <?php
-
+                    session_start();
                 if(isset($_POST['chooseR'])){
                     echo 'red ';
                     echo $_POST['chooseR'];

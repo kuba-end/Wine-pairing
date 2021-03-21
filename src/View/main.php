@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="csss/main_style.css">
 </head>
 <body>
+        <?php
+         session_start();
+        ?>
     <div class="container">
         <header class="header">Pair your wine!</header>
         <form class="input" action="type.php" method="post">

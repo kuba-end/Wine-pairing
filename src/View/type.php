@@ -9,7 +9,10 @@
 <div class="container">
 
 <?php
-if (isset($_POST['red'])){?>
+session_start();
+if (isset($_POST['red'])){
+    $_SESSION['app'][]=$_POST['red'];
+    ?>
     <header class="header">Choose type of red wine</header>
     <form class="input" action="result.php" method="post">
             <button type="submit" class="input__submit" name="chooseR" value="dry">Dry</button>
@@ -17,7 +20,9 @@ if (isset($_POST['red'])){?>
             <button type="submit" class="input__submit" name="chooseR" value="medium sweet">Medium Sweet</button>
             <button type="submit" class="input__submit" name="chooseR" value="sweet">Sweet</button>
         </form>
-<?php } else{?>
+<?php } else{
+    $_SESSION['app'][]=$_POST['white'];
+    ?>
     <header class="header">Choose type of white wine</header>
     <form class="input" action="result.php" method="post">
         <button type="submit" class="input__submit" name="chooseW" value="dry">Dry</button>

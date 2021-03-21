@@ -39,7 +39,7 @@ class UniversalConnect implements ConnectInfoInterface
                      self::$user);
 
         } catch (PDOException $e){
-            echo sprintf('Error!1: %s<br>',
+            echo sprintf('Error!: %s<br>',
                 $e->getMessage());
         }
         return self::$hookup;
