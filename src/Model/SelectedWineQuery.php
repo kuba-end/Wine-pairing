@@ -5,16 +5,19 @@ declare(strict_types=1);
 namespace KubaEnd\Model;
 
 
+
 use KubaEnd\Model\Interfaces\MealInterface;
 use Exception;
-use PDO;
+use KubaEnd\Model\Wines\Sangiovese;
+
 
 class SelectedWineQuery implements MealInterface
 {
-    public array $selectedWine;
+    public string $selectedWine;
     public object $hookup;
-    public string $sql;
+    public $sql;
     public array $result;
+    public $smth;
 
     public function __construct(){
         try {
@@ -24,41 +27,11 @@ class SelectedWineQuery implements MealInterface
         }
     }
     public function selectedType($smth){
-        $sql=DbQueries::SANGIOVESE;
-        $stmt = $this->hookup->prepare($sql);
-        //$stmt->bindValue(':wine', $smth);
-        $stmt->execute();
-        $this->result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $this->echoResult();
-        //$this->selectedWine=$smth;
-//        switch($this->selectedWine){
-//            case "Sangiovese":
-//                echo "lol";
-//                $this->sangiovese();
-//                $this->damn();
-//                break;
-//        }
+        $this->selectedWine=$smth;
+        $this->smth= new Sangiovese();
+        $this->sql=$this->smth->query();
     }
-    public function damn(){
-        $sql=$this->sql;
-        $stmt = $this->hookup->prepare($sql);
-        //$stmt->bindValue(':wine', $smth);
-        $stmt->execute();
-        $this->result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $this->echoResult();
-}
-    private function echoResult()
-    {
-        foreach ($this->result as $row) {
-            echo "1";
-            var_dump($row);
-            echo '<br><br>';
 
-        }
-    }
-    public function sangiovese(){
-        return $this->sql=DbQueries::SANGIOVESE;
-    }
     public function tempranillo(){}
     public function cabernetSauvignon(){}
     public function pinotNoir(){}
