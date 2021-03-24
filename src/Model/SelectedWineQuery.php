@@ -15,9 +15,9 @@ class SelectedWineQuery implements MealInterface
 {
     public string $selectedWine;
     public object $hookup;
-    public $sql;
+    public bool $sql;
     public array $result;
-    public $smth;
+    public object $smth;
 
     public function __construct(){
         try {
@@ -26,31 +26,14 @@ class SelectedWineQuery implements MealInterface
             echo $e->getMessage();
         }
     }
-    public function selectedType($smth){
+    public function selectedType($smth):void{
         $this->selectedWine=$smth;
         $this->smth= new Sangiovese();
         $this->sql=$this->smth->query();
     }
-
-    public function tempranillo(){}
-    public function cabernetSauvignon(){}
-    public function pinotNoir(){}
-    public function syrah(){}
-    public function merlot(){}
-    public function malbec(){}
-    public function garnacha(){}
-    public function zinfandel(){}
-    public function porto(){}
-    public function muscadet(){}
-    public function sauvignonBlanc(){}
-    public function pinotGris(){}
-    public function chardonnay(){}
-    public function cheninBlanc(){}
-    public function viognier(){}
-    public function torrontes(){}
-    public function gewurztraminer(){}
-    public function riesling(){}
-    public function muscat(){}
-    public function iceWine(){}
-
+    public function selectedType2($smth):void{
+        $this->selectedWine=$smth;
+        $this->smth= new Sangiovese();
+        $this->sql=$this->smth->option();
+    }
 }

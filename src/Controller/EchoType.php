@@ -10,36 +10,39 @@ use KubaEnd\Model\DbQueries;
 
 abstract class EchoType
 {
+    const DRY='dry';
+    const MDRY='medium dry';
+    const MSWEET='medium sweet';
+    const SWEET='sweet';
 
-
-    public function getType()
+    public function getType():string
     {
         if(isset($_POST['chooseR'])){
 
-            if (($_POST['chooseR']) == 'dry'){
+            if (($_POST['chooseR']) == self::DRY){
                 $sql=DbQueries::R_DRY;
 
             }
-            elseif ($_POST['chooseR'] == 'medium dry'){
+            elseif ($_POST['chooseR'] == self::MDRY){
                 $sql=DbQueries::R_MEDIUMD;
             }
-            elseif ($_POST['chooseR'] == 'medium sweet'){
+            elseif ($_POST['chooseR'] == self::MSWEET){
                 $sql=DbQueries::R_MEDIUMS;
             }
-            elseif ($_POST['chooseR'] == 'sweet'){
+            elseif ($_POST['chooseR'] == self::SWEET){
                 $sql=DbQueries::R_SWEET;
             }
         }
-        elseif (($_POST['chooseW']) == 'dry'){
+        elseif (($_POST['chooseW']) == self::DRY){
             $sql=DbQueries::W_DRY;
         }
-        elseif ($_POST['chooseW'] == 'medium dry'){
+        elseif ($_POST['chooseW'] == self::MDRY){
             $sql=DbQueries::W_MEDIUMD;
         }
-        elseif ($_POST['chooseW'] == 'medium sweet'){
+        elseif ($_POST['chooseW'] == self::MSWEET){
             $sql=DbQueries::W_MEDIUMS;
         }
-        elseif ($_POST['chooseW'] == 'sweet'){
+        elseif ($_POST['chooseW'] == self::SWEET){
             $sql=DbQueries::W_SWEET;
         }
         else{

@@ -15,8 +15,8 @@ class FetchResult extends EchoType implements WineInterface
 
     public string $query;
     private object $hookup;
-    private $result;
-    public $type;
+    private array $result;
+    public string $type;
 
     public function __construct(){
         try {
@@ -27,7 +27,7 @@ class FetchResult extends EchoType implements WineInterface
 
 
     }
-    public function getWine($queryWine)
+    public function getWine($queryWine):void
     {
 
         $sql=EchoType::getType();
@@ -37,11 +37,11 @@ class FetchResult extends EchoType implements WineInterface
         $this->result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $this->echoResult();
     }
-    private function echoResult()
+    private function echoResult():void
     {
         foreach ($this->result as $row) {
             $this->type=($row['strain']);
-//            echo $this->type;?>
+            ?>
                 <form action="../../end.php" method="post">
                     <input type="submit" name="<?php echo $this->type?>" value='<?php echo $this->type?>'>
                     </form>

@@ -9,9 +9,9 @@ use PDO;
 
 class Client
 {
-    private $tableMaster;
-    private $search;
-    private $query;
+    private string $tableMaster;
+    private string $search;
+    private object $query;
     /**
      * @var object|PDO
      */
@@ -28,7 +28,7 @@ class Client
         $this->getInterface($this->query=new FetchResult());
 
     }
-    private function getInterface(WineInterface $query){
+    private function getInterface(WineInterface $query):void{
         $query->getWine($this->search);
 
     }

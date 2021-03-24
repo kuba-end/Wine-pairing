@@ -24,13 +24,13 @@ class UniversalConnect implements ConnectInfoInterface
     private static string $currentDB=ConnectInfoInterface::DBNAME;
     private static string $pass=ConnectInfoInterface::PW;
     private static string $user=ConnectInfoInterface::USER;
-    private static  $hookup;
+    private static object $hookup;
 
     /**
      * Creating an universal connecting with database.
-     * @return object|PDO
+     * @return object
      */
-    public static function doConnect()
+    public static function doConnect():object
     {
         try {
             self::$hookup = new PDO(

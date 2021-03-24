@@ -18,7 +18,7 @@ class Fabryka
             echo $e->getMessage();
         }
     }
-    public function getData($param){
+    public function getData($param):array{
         $sql=$param;
         $stmt = $this->hookup->prepare($sql);
         //$stmt->bindValue(':wine', $smth);
