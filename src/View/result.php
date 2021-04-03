@@ -13,11 +13,11 @@
                 if(isset($_POST['chooseR'])){
                     echo 'red ';
                     echo $_POST['chooseR'];
-                    $strain = $_POST['chooseR'];
+                    //$strain = $_POST['chooseR'];
                 } else{
                     echo 'white ';
                     echo $_POST['chooseW'];
-                    $strain = $_POST['chooseW'];
+                    //$strain = $_POST['chooseW'];
                 };?></b> wine</header>
             <section class="result">
                 <?php

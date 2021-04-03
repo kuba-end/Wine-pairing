@@ -1,11 +1,19 @@
 <?php
-declare(strict_types=1);
+//declare(strict_types=1);
 
 
 namespace KubaEnd\Model\Wines;
 
 
-class Torrontes
-{
+use KubaEnd\Model\Abstracts\FoodTypes;
+use KubaEnd\Model\Interfaces\StrainInterface;
 
+class Torrontes extends FoodTypes implements StrainInterface
+{
+    public function query(){
+
+    }
+    public function option(){
+
+    }
 }

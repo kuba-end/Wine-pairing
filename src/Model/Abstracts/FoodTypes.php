@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace KubaEnd\Model\Abstracts;
 
 
-use KubaEnd\Model\DbQueries;
+use KubaEnd\Model\Interfaces\DbQueries;
 use KubaEnd\Model\Fabryka;
 
 class FoodTypes
@@ -172,6 +172,38 @@ class FoodTypes
         $this->echoResult();
         return $this->result;
     }
+    public function starchWholeWheat():array{
+        echo "Whole wheat grains :<br>";
+        $this->result=$this->object->getData(DbQueries::WHOLE_WHEAT);
+        $this->echoResult();
+        return $this->result;
+    }
+    public function starchSweetVege():array{
+        echo "Sweet starchy vegetables :<br>";
+        $this->result=$this->object->getData(DbQueries::SWEET_STARCHY_VEGE);
+        $this->echoResult();
+        return $this->result;
+    }
+    public function sweetFruit():array{
+        echo "Fruits and berries :<br>";
+        $this->result=$this->object->getData(DbQueries::SWEET_FRUIT);
+        $this->echoResult();
+        return $this->result;
+    }
+    public function sweetVanilla():array{
+        echo "Fruits and berries :<br>";
+        $this->result=$this->object->getData(DbQueries::SWEET_VANILLA);
+        $this->echoResult();
+        return $this->result;
+    }
+    public function sweetChocolate():array{
+        echo "Fruits and berries :<br>";
+        $this->result=$this->object->getData(DbQueries::SWEET_CHOCOLATE);
+        $this->echoResult();
+        return $this->result;
+    }
+
+
 
     private function echoResult():void
     {

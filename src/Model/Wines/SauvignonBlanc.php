@@ -5,7 +5,15 @@ declare(strict_types=1);
 namespace KubaEnd\Model\Wines;
 
 
-class SauvignonBlanc
-{
+use KubaEnd\Model\Abstracts\FoodTypes;
+use KubaEnd\Model\Interfaces\StrainInterface;
 
+class SauvignonBlanc extends FoodTypes implements StrainInterface
+{
+    public function query(){
+
+    }
+    public function option(){
+
+    }
 }

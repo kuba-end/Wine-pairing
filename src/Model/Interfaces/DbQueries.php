@@ -2,11 +2,19 @@
 declare(strict_types=1);
 
 
-namespace KubaEnd\Model;
+namespace KubaEnd\Model\Interfaces;
 
-
+/**
+ * Interface DbQueries
+ *
+ * List of queries used while contacting with DB
+ *
+ * @package KubaEnd\Model
+ */
 interface DbQueries
 {
+
+
     const R="select strain from strain_color where color='red'";
     const W_DRY="select strain from wine_strains where type=:wine and color='white'";
     const W_MEDIUMD="select strain from wine_strains where type=:wine and color='white'";
@@ -44,6 +52,9 @@ interface DbQueries
     const WHOLE_WHEAT="select examples from whole_wheat_grains";
     const SWEET_STARCHY_VEGE="select examples from sweet_starchy_vegetables";
     const POTATO="select examples from potato";
+    const SWEET_FRUIT="select examples from fruit_berries";
+    const SWEET_VANILLA="select examples from vanilla_caramel";
+    const SWEET_CHOCOLATE="select examples from chocolate_cofee";
 
 
 }

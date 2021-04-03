@@ -6,12 +6,13 @@ namespace KubaEnd\Model\Wines;
 
 
 use KubaEnd\Model\Abstracts\FoodTypes;
+use KubaEnd\Model\Interfaces\StrainInterface;
 
 
-class Sangiovese extends FoodTypes
+class Sangiovese extends FoodTypes implements StrainInterface
 {
 
-    public function query() {
+    public function query():bool {
         $this->meatPork();
         $this->dairyPungentCheese();
         $this->vegetableAlliums();
@@ -19,10 +20,9 @@ class Sangiovese extends FoodTypes
         $this->vegetableFunghi();
         $this->herbsRedPepper();
         $this->herbsExotic();
-
         return true;
     }
-    public function option() {
+    public function option():bool {
         $this->meatRedMeat();
         $this->meatCuredMeat();
         $this->meatPoultry();
@@ -34,7 +34,6 @@ class Sangiovese extends FoodTypes
         $this->herbsBaking();
         $this->starchWhiteStarches();
         $this->starchPotato();
-
         return true;
     }
 }

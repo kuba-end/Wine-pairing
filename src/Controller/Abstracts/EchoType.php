@@ -2,10 +2,10 @@
 declare(strict_types=1);
 
 
-namespace KubaEnd\Controller;
+namespace KubaEnd\Controller\Abstracts;
 
 
-use KubaEnd\Model\DbQueries;
+use KubaEnd\Model\Interfaces\DbQueries;
 
 
 abstract class EchoType
