@@ -16,21 +16,23 @@ use KubaEnd\Model\Interfaces\StrainInterface;
  */
 class CabernetSauvignon extends FoodTypes implements StrainInterface
 {
-    public function query(){
-        $this->meatRedMeat();
-        $this->dairyHardCheese();
-        $this->herbsBlackPepper();
+    public function query()
+    {
+        self::meatRedMeat();
+        self::dairyHardCheese();
+        self::herbsBlackPepper();
     }
 
-    public function option(){
-        $this->meatCuredMeat();
-        $this->meatPoultry();
-        $this->dairyPungentCheese();
-        $this->vegetableAlliums();
-        $this->vegetableNightshades();
-        $this->vegetableFunghi();
-        $this->herbsRedPepper();
-        $this->starchWhiteStarches();
-        $this->starchPotato();
+    public function option()
+    {
+        self::meatCuredMeat();
+        self::meatPoultry();
+        self::dairyPungentCheese();
+        self::vegetableAlliums();
+        self::vegetableNightshades();
+        self::vegetableFunghi();
+        self::herbsRedPepper();
+        self::starchWhiteStarches();
+        self::starchPotato();
     }
 }

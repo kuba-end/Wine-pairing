@@ -14,7 +14,7 @@ class PairFood
     /**
      * @var string Name of strain from _POST array
      */
-    private string $try;
+    public string $try;
     /**
      * @var object db connnection
      */
@@ -62,6 +62,14 @@ class PairFood
     private function selectedType2($wine):void
     {
         $wine->selectedQuery2($this->try);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTry(): string
+    {
+        return implode("", $_POST);
     }
 }
 

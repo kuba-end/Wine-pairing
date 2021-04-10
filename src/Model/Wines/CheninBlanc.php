@@ -10,29 +10,29 @@ use KubaEnd\Model\Interfaces\StrainInterface;
 
 class CheninBlanc extends FoodTypes implements StrainInterface
 {
-    public function query(){
-        $this->meatCuredMeat();
-        $this->vegetableNuts();
-        $this->herbsHotSpicy();
-        $this->herbsExotic();
-        $this->starchWholeWheat();
-        $this->starchSweetVege();
-        $this->sweetFruit();
-        return true;
+    public function query()
+    {
+        self::meatCuredMeat();
+        self::vegetableNuts();
+        self::herbsHotSpicy();
+        self::herbsExotic();
+        self::starchWholeWheat();
+        self::starchSweetVege();
+        self::sweetFruit();
     }
-    public function option(){
-        $this->meatLobster();
-        $this->dairySoftCheese();
-        $this->dairyPungentCheese();
-        $this->vegetableAlliums();
-        $this->vegetableRootSquash();
-        $this->vegetableNightshades();
-        $this->herbsRedPepper();
-        $this->herbsRedPepper();
-        $this->herbsBaking();
-        $this->starchWhiteStarches();
-        $this->starchPotato();
-        $this->sweetVanilla();
-        return true;
+    public function option()
+    {
+        self::meatLobster();
+        self::dairySoftCheese();
+        self::dairyPungentCheese();
+        self::vegetableAlliums();
+        self::vegetableRootSquash();
+        self::vegetableNightshades();
+        self::herbsRedPepper();
+        self::herbsRedPepper();
+        self::herbsBaking();
+        self::starchWhiteStarches();
+        self::starchPotato();
+        self::sweetVanilla();
     }
 }

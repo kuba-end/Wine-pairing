@@ -12,28 +12,28 @@ use KubaEnd\Model\Interfaces\StrainInterface;
 class Sangiovese extends FoodTypes implements StrainInterface
 {
 
-    public function query():bool {
-        $this->meatPork();
-        $this->dairyPungentCheese();
-        $this->vegetableAlliums();
-        $this->vegetableNightshades();
-        $this->vegetableFunghi();
-        $this->herbsRedPepper();
-        $this->herbsExotic();
-        return true;
+    public function query()
+    {
+        self::meatPork();
+        self::dairyPungentCheese();
+        self::vegetableAlliums();
+        self::vegetableNightshades();
+        self::vegetableFunghi();
+        self::herbsRedPepper();
+        self::herbsExotic();
     }
-    public function option():bool {
-        $this->meatRedMeat();
-        $this->meatCuredMeat();
-        $this->meatPoultry();
-        $this->dairySoftCheese();
-        $this->dairyHardCheese();
-        $this->vegetableBeans();
-        $this->herbsBlackPepper();
-        $this->herbsHerbs();
-        $this->herbsBaking();
-        $this->starchWhiteStarches();
-        $this->starchPotato();
-        return true;
+    public function option()
+    {
+        self::meatRedMeat();
+        self::meatCuredMeat();
+        self::meatPoultry();
+        self::dairySoftCheese();
+        self::dairyHardCheese();
+        self::vegetableBeans();
+        self::herbsBlackPepper();
+        self::herbsHerbs();
+        self::herbsBaking();
+        self::starchWhiteStarches();
+        self::starchPotato();
     }
 }

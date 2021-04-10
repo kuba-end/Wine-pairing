@@ -1,5 +1,5 @@
 <?php
-
+// https://xyproblem.info/
 require __DIR__.'/vendor/autoload.php';
 
 use KubaEnd\Controller\PairFood;
@@ -15,6 +15,9 @@ session_start();
 </head>
 <body>
 <div class="container">
+    <?php $trigger=new PairFood();
+            echo $trigger->getTry();
+            ?>
     <div class="column1">
         <p class="column1--title">Exelent pairing with your wine</p>
         <?php

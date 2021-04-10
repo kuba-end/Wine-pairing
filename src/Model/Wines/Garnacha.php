@@ -10,10 +10,21 @@ use KubaEnd\Model\Interfaces\StrainInterface;
 
 class Garnacha extends FoodTypes implements StrainInterface
 {
-    public function query(){
-
+    public function query()
+    {
+        self::meatCuredMeat();
+        self::meatPoultry();
+        self::dairySoftCheese();
+        self::vegetableFunghi();
     }
-    public function option(){
-
+    public function option()
+    {
+        self::vegetableAlliums();
+        self::vegetableNuts();
+        self::herbsHerbs();
+        self::herbsExotic();
+        self::starchWhiteStarches();
+        self::starchWholeWheat();
+        self::starchPotato();
     }
 }

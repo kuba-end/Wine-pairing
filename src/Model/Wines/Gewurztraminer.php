@@ -10,10 +10,29 @@ use KubaEnd\Model\Interfaces\StrainInterface;
 
 class Gewurztraminer extends FoodTypes implements StrainInterface
 {
-    public function query(){
-
+    public function query()
+    {
+        self::meatCuredMeat();
+        self::vegetableNuts();
+        self::herbsHotSpicy();
+        self::herbsExotic();
+        self::starchWholeWheat();
+        self::starchSweetVege();
+        self::sweetFruit();
     }
-    public function option(){
-
+    public function option()
+    {
+        self::meatLobster();
+        self::dairySoftCheese();
+        self::dairyPungentCheese();
+        self::vegetableAlliums();
+        self::vegetableRootSquash();
+        self::vegetableNightshades();
+        self::herbsRedPepper();
+        self::herbsRedPepper();
+        self::herbsBaking();
+        self::starchWhiteStarches();
+        self::starchPotato();
+        self::sweetVanilla();
     }
 }

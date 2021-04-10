@@ -10,10 +10,23 @@ use KubaEnd\Model\Interfaces\StrainInterface;
 
 class Syrah extends FoodTypes implements StrainInterface
 {
-    public function query(){
-
+    public function query()
+    {
+        self::meatRedMeat();
+        self::dairyHardCheese();
+        self::herbsBlackPepper();
     }
-    public function option(){
 
+    public function option()
+    {
+        self::meatCuredMeat();
+        self::meatPoultry();
+        self::dairyPungentCheese();
+        self::vegetableAlliums();
+        self::vegetableNightshades();
+        self::vegetableFunghi();
+        self::herbsRedPepper();
+        self::starchWhiteStarches();
+        self::starchPotato();
     }
 }

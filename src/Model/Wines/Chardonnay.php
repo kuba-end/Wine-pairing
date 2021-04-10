@@ -10,10 +10,23 @@ use KubaEnd\Model\Interfaces\StrainInterface;
 
 class Chardonnay extends FoodTypes implements StrainInterface
 {
-    public function query(){
-
+    public function query()
+    {
+        self::meatPoultry();
+        self::meatLobster();
+        self::dairySoftCheese();
+        self::vegetableFunghi();
     }
-    public function option(){
-
+    public function option()
+    {
+        self::meatFish();
+        self::dairyHardCheese();
+        self::vegetableAlliums();
+        self::vegetableRootSquash();
+        self::vegetableNuts();
+        self::herbsHerbs();
+        self::starchWhiteStarches();
+        self::starchWholeWheat();
+        self::starchPotato();
     }
 }
