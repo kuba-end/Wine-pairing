@@ -20,7 +20,7 @@ class Torrontes extends FoodTypes implements StrainInterface
         self::dairyHardCheese();
         self::herbsExotic();
         self::vegetableRootSquash();
-        self::sweetFruit();
+        
 
     }
 }

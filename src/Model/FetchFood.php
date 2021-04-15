@@ -7,7 +7,7 @@ namespace KubaEnd\Model;
 use PDO;
 use Exception;
 
-class Fabryka
+class FetchFood
 {
     public object $hookup;
 

@@ -1,19 +1,19 @@
 body{
-    background-color: #ffe4b5;
+    background-color: darkred;
 }
 .container{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(5,1fr);
     grid-gap: 5vw;
     grid-auto-rows: minmax(5vh,auto);
 }
 .header{
-    grid-column: 2;
-    grid-row: 3;
+    grid-column: 3;
+    grid-row: 1;
     padding-top: 3vh;
     text-align: center;
     font-size: 25px;
-    color: darkred;
+    color: whitesmoke;
 }
 .input{
     grid-column: 2;
@@ -28,17 +28,25 @@ body{
     background-color: #ffe4b5;
     cursor: pointer;
 }
-.input__submit{
-    border-radius: 25px;
+.input__color:hover{
+    color: darkred;
+    border-radius: 15px;
     border-color: darkred;
-    font-size: 20px;
+    font-size: 22px;
     padding: 1vw;
     background-color: #ffe188;
+    cursor: pointer;
+}
+.input__submit{
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 1vw;
+    background-color: #ffe4b5;
 }
 .input__submit:hover{
     color: darkred;
     border-radius: 15px;
-    border-color: darkred;
+    border-color: white;
     font-size: 22px;
     padding: 1vw;
     background-color: #ffe188;

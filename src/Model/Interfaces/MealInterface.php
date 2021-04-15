@@ -7,6 +7,6 @@ namespace KubaEnd\Model\Interfaces;
 
 interface MealInterface
 {
-    public function selectedQuery($param);
-    public function selectedQuery2($param);
+    public function setFqn($param);
+    public function setFqn2($param);
 }

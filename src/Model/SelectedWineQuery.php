@@ -15,7 +15,7 @@ class SelectedWineQuery implements MealInterface
     public object $hookup;
     public $sql;
     public array $result;
-    public object $smth;
+    public object $strain;
 
     public function __construct()
     {
@@ -27,27 +27,27 @@ class SelectedWineQuery implements MealInterface
     }
 
     /**
-     * @param $smth | is a name of strain from PairFood
+     * @param $strain | is a name of strain from PairFood
      * Fucking clue of all of it, but it won't fckin working and name of class
      * need to be hard typed
      *
      * I maked alternative way to making object trough the factory but its throw the same error
      * class not found...
      */
-    public function selectedQuery($smth):void
+    public function setFqn($strain):void
     {
 
-        $smth=str_replace(" ","",$smth);
-        $fqn =  "KubaEnd\Model\Wines\\$smth";
-        $this->smth= new $fqn;
-        $this->sql=$this->smth->query();
+        $strain=str_replace(" ","",$strain);
+        $fqn =  "KubaEnd\Model\Wines\\$strain";
+        $this->strainObject= new $fqn;
+        $this->sql=$this->strainObject->query();
 
     }
-    public function selectedQuery2($smth):void
+    public function setFqn2($strain):void
     {
-        $smth=str_replace(" ","",$smth);
-        $fqn =  "KubaEnd\Model\Wines\\$smth";
-        $this->smth= new $fqn;
-        $this->sql=$this->smth->option();
+        $strain=str_replace(" ","",$strain);
+        $fqn =  "KubaEnd\Model\Wines\\$strain";
+        $this->strainObject= new $fqn;
+        $this->sql=$this->strainObject->option();
     }
 }

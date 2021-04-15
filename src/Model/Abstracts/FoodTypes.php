@@ -6,7 +6,7 @@ namespace KubaEnd\Model\Abstracts;
 
 
 use KubaEnd\Model\Interfaces\DbQueries;
-use KubaEnd\Model\Fabryka;
+use KubaEnd\Model\FetchFood;
 
 class FoodTypes
 {
@@ -14,10 +14,8 @@ class FoodTypes
     private array $result;
 
     public function __construct(){
-        $this->object=new Fabryka();
-
+        $this->object=new FetchFood();
     }
-
     public function meatRedMeat():array{
         echo "Meat :<br>";
         $this->result=$this->object->getData(DbQueries::RED_MEAT);
@@ -132,28 +130,24 @@ class FoodTypes
         $this->echoResult();
         return $this->result;
     }
-
     public function herbsHotSpicy():array{
         echo "Hot & spicy herbs :<br>";
         $this->result=$this->object->getData(DbQueries::HOT_SPICY);
         $this->echoResult();
         return $this->result;
     }
-
     public function herbsHerbs():array{
         echo "Herbs :<br>";
         $this->result=$this->object->getData(DbQueries::HERBS);
         $this->echoResult();
         return $this->result;
     }
-
     public function herbsBaking():array{
         echo "Baking spices :<br>";
         $this->result=$this->object->getData(DbQueries::BAKING);
         $this->echoResult();
         return $this->result;
     }
-
     public function herbsExotic():array{
         echo "Exotic & aromatic herbs :<br>";
         $this->result=$this->object->getData(DbQueries::EXOTIC);
@@ -202,9 +196,6 @@ class FoodTypes
         $this->echoResult();
         return $this->result;
     }
-
-
-
     private function echoResult():void
     {
         foreach ($this->result as $row) {

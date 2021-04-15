@@ -23,7 +23,7 @@ session_start();
         <?php
         echo "<br><br>";
         $worker = new PairFood();
-        $worker->goodEnough();
+        $worker->implodeStrain();
         ?>
     </div>
     <div class="column2">
@@ -32,7 +32,7 @@ session_start();
         echo "<br><br>";
 
         $worker = new PairFood();
-        $worker->goodEnough2();
+        $worker->implodeStrain2();
         ?>
     </div>
 

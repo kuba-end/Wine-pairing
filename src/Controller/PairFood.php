@@ -14,7 +14,7 @@ class PairFood
     /**
      * @var string Name of strain from _POST array
      */
-    public string $try;
+    public string $selectedStrainName;
     /**
      * @var object db connnection
      */
@@ -24,15 +24,15 @@ class PairFood
      * method which
      * extracting string from $_POST array
      * making db connection
-     * and initializing selectedType method with binding object to $wine
+     * and initializing selectedStrain method with binding object to $wine
      *
      * ---Maybe too much---
      */
-    public function goodEnough():void
+    public function implodeStrain():void
     {
-        $this->try = implode("", $_POST);
+        $this->selectedStrainName = implode("", $_POST);
         $this->hookup = UniversalConnect::doConnect();
-        $this->selectedType($this->wine = new SelectedWineQuery());
+        $this->selectedStrain($this->wine = new SelectedWineQuery());
 
     }
 
@@ -40,28 +40,28 @@ class PairFood
      * Twin method for additional food types
      * maked as a separate method for improving flexibility of using results
      */
-    public function goodEnough2():void
+    public function implodeStrain2():void
     {
-        $this->try = implode("", $_POST);
+        $this->selectedStrainName = implode("", $_POST);
         $this->hookup = UniversalConnect::doConnect();
-        $this->selectedType2($this->wine = new SelectedWineQuery());
+        $this->selectedStrain2($this->wine = new SelectedWineQuery());
     }
 
     /**
-     * @param $wine SelectedWineQuery || name of strain which is nessesery to initialize selectedQuery method
+     * @param $wine SelectedWineQuery || name of strain which is nessesery to initialize setFqn method
      * from SelectedWineQuery class
      */
-    private function selectedType($wine):void
+    private function selectedStrain($wine):void
     {
-        $wine->selectedQuery($this->try);
+        $wine->setFqn($this->selectedStrainName);
     }
 
     /**
-     * @param $wine SelectedWineQuery || twin method, similar solution as with goodEnough2 method
+     * @param $wine SelectedWineQuery || twin method, similar solution as with implodeStrain2 method
      */
-    private function selectedType2($wine):void
+    private function selectedStrain2($wine):void
     {
-        $wine->selectedQuery2($this->try);
+        $wine->setFqn2($this->selectedStrainName);
     }
 
     /**

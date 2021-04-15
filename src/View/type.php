@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="csss/main_style.css">
+    <?php
+    session_start();
+    if (isset($_POST['red'])){
+    ?>
+    <link rel="stylesheet" href="csss/main_style_red.css">
+    <?php
+    }
+    else {?>
+        <link rel = "stylesheet" href = "csss/main_style.css" >
+    <?php }
+    ?>
 </head>
 <body>
 <div class="container">
 
 <?php
-session_start();
+//session_start();
 if (isset($_POST['red'])){
     $_SESSION['app'][]=$_POST['red'];
     ?>
