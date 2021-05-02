@@ -1,36 +1,57 @@
 <?php
-// https://xyproblem.info/
+
 require __DIR__.'/vendor/autoload.php';
 
 use KubaEnd\Controller\PairFood;
 
 session_start();
-//$worker = new PairFood();?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="src/View/csss/end_style.css">
+    <?php
+    $array=['Pinot Noir',
+        'Sangiovese',
+        'Tempranillo',
+        'Cabernet Sauvignon',
+        'Syrah',
+        'Merlot',
+        'Malbec',
+        'Garnacha',
+        'Zinfandel',
+        'Port'];
+    $trigger=new PairFood();
+    $check=$trigger->getTry();
+    if (in_array($check,$array)){
+        ?>
+        <link rel="stylesheet" href="src/View/csss/end_style.css">
+        <?php
+    }
+    else {?>
+        <link rel="stylesheet" href="src/View/csss/end_style_white.css">
+    <?php }
+    ?>
 </head>
 <body>
 <div class="container">
-    <?php $trigger=new PairFood();
-            echo $trigger->getTry();
+    <div class="view-balance">Excellent!</div>
+    <div class="choosen-wine">Your choice:
+    <?php
+            echo $check;
             ?>
+    </div>
     <div class="column1">
-        <p class="column1--title">Exelent pairing with your wine</p>
+        <div class="column1--title">Exelent pairing with your wine</div>
         <?php
-        echo "<br><br>";
         $worker = new PairFood();
         $worker->implodeStrain();
         ?>
     </div>
     <div class="column2">
-        <p class="column2--title">Also good</p>
+        <div class="column2--title">Also good</div>
         <?php
-        echo "<br><br>";
-
         $worker = new PairFood();
         $worker->implodeStrain2();
         ?>

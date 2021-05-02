@@ -201,7 +201,7 @@ class FoodTypes
         foreach ($this->result as $row) {
             foreach ($row as $item){
 
-            echo "<a href=''>".$item."</a>";
+            echo "<p>".$item."</p>";
             echo "<br>";
 
         }

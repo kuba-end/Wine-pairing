@@ -1,19 +1,37 @@
 body{
-    background-color: darkred;
+    background-color: #ffe4b5;
+    color: white;
 }
 .container{
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 5vw;
     grid-auto-rows: minmax(5vh,auto);
 }
 .header{
-    grid-column: 3;
-    grid-row: 1;
+    grid-column: 2;
+    grid-row: 2;
     padding-top: 3vh;
     text-align: center;
     font-size: 25px;
-    color: whitesmoke;
+    color: darkred;
+}
+
+#input_dry{
+    margin: 2vh;
+
+}
+#input_mediumdry{
+    margin: 2vh;
+
+}
+#input_mediumsweet{
+    margin: 2vh;
+
+}
+#input_sweet{
+    margin: 2vh;
+
 }
 .input{
     grid-column: 2;
@@ -21,34 +39,34 @@ body{
     text-align: center;
     margin-bottom: 5vh;
 }
-.input__color{
-    border-radius: 25px;
+.input__color {
     font-size: 20px;
-    padding: 1vw;
-    background-color: #ffe4b5;
+    padding: 2vw;
+    background-color: darkred;
     cursor: pointer;
 }
-.input__color:hover{
-    color: darkred;
-    border-radius: 15px;
-    border-color: darkred;
-    font-size: 22px;
-    padding: 1vw;
-    background-color: #ffe188;
-    cursor: pointer;
-}
-.input__submit{
-    border-radius: 25px;
+
+.input__color:hover {
+    background-color: lightgreen;
+    border-color: black;
     font-size: 20px;
-    padding: 1vw;
-    background-color: #ffe4b5;
-}
-.input__submit:hover{
-    color: darkred;
-    border-radius: 15px;
-    border-color: white;
-    font-size: 22px;
-    padding: 1vw;
-    background-color: #ffe188;
+    padding: 2vw;
     cursor: pointer;
+}
+
+.input__submit {
+    font-size: 20px;
+    padding: 2vw;
+    background-color: darkred;
+    cursor: pointer;
+    color: white;
+}
+
+.input__submit:hover {
+    background-color: darkgreen;
+    border-color: black;
+    font-size: 20px;
+    padding: 2vw;
+    cursor: pointer;
+    color: white;
 }

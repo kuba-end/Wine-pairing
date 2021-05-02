@@ -1,5 +1,6 @@
 body{
     background-color: #ffe4b5;
+    color:darkred;
 }
 .container{
     display: grid;
@@ -13,7 +14,6 @@ body{
     padding-top: 3vh;
     text-align: center;
     font-size: 25px;
-    color: darkred;
 }
 .result{
     grid-column: 2;

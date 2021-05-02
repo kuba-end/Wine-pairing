@@ -1,9 +1,9 @@
 body{
-    background-color: darkred;
-    color:sandybrown;
+    background-color: #ffe4b5;
+    color:black;
 }
 p{
-    color:#ffe4b5;
+    color:darkred;
     margin:0;
     padding: 0;
 }
