@@ -10,7 +10,9 @@
         }
     ],
     "require": {
-      "ext-pdo": "*"
+      "ext-pdo": "*",
+        "swiftmailer/swiftmailer": "^6.0",
+        "symfony/validator": "^5.2"
     },
     "autoload": {
         "psr-4": {
