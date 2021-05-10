@@ -34,12 +34,11 @@ class UniversalConnect implements ConnectInfoInterface
     {
         try {
             self::$hookup = new PDO(
-                'mysql:host='.self::$server.';
-                     dbname='.self::$currentDB,
-                     self::$user);
-
+                'mysql:host='.self::$server.';dbname='.self::$currentDB,
+                     self::$user,
+                     self::$pass);
         } catch (PDOException $e){
-            echo sprintf('Error!: %s<br>',
+            echo sprintf('Error!: %s',
                 $e->getMessage());
         }
         return self::$hookup;

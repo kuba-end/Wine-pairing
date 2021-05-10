@@ -8,14 +8,18 @@
 <body>
         <?php
          session_start();
-        ?>
+         if (isset($_SESSION['flash'])){
+             echo $_SESSION['flash'][1];
+             unset ($_SESSION['flash']);
+         }
+         ?>
     <div class="container">
 
         <header class="header">Wine Pairing</header>
         <div class="leftsidebar">Left sidebar<br>
             <ul>
-                <li><a href="/about">About App</a></li>
-                <li><a href="/wines">Wines</a></li>
+                <li><a href="/wine/src/View/about.php">About App</a></li>
+                <li><a href="/wine/src/View/wines.php">Wines</a></li>
                 <li><a href="/wine/src/View/contact.php">Contact</a></li>
             </ul>
         </div>

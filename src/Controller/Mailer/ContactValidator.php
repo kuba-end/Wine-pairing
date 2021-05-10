@@ -45,8 +45,13 @@ if($_POST){
     }
 
     if(!$isValid){
-        echo "Correct form";
+        echo "Formularz niepoprawny popraw dane".'<br>';
+        echo "<a href='../../View/contact.php'>Powrót</a>";
         exit;
+    }
+    if ($isValid==true){
+        $_SESSION['flash']=["success","Mail sent successfuly"];
+
     }
     require "SwiftMailer.php";
     header("Location: ../../View/main.php");

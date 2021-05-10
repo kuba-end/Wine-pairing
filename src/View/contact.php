@@ -7,16 +7,15 @@
 </head>
 <body>
 <?php
-//require
-//session_start();
+session_start();
 ?>
 <div class="container">
 
     <header class="header">Wine Pairing</header>
-    <div class="leftsidebar">Left sidebar<br>
+    <div class="leftsidebar">
         <ul>
-            <li><a href="/about">About App</a></li>
-            <li><a href="/wines">Wines</a></li>
+            <li><a href="/wine/src/View/about.php">About App</a></li>
+            <li><a href="/wine/src/View/wines.php">Wines</a></li>
             <li>
                 <?php
                     if ($_SERVER['PHP_SELF']=='contact.php') ?>
@@ -24,17 +23,17 @@
             </li>
         </ul>
     </div>
-    <form class="contactForm" action="../Controller/Mailer/ContactValidator.php" method="post">
+        <form class="contactForm" action="../Controller/Mailer/ContactValidator.php" method="post">
         <label for="name">Your name</label>
         <input type="text" name="name"/>
         <label>Your e-mail</label>
-        <input type="email" name="email" placeholder="example@site.pl"/>
+        <input type="text" name="email" placeholder="example@site.pl"/>
         <label>Message topic</label>
         <input type="text" name="topic"/>
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="6" cols="33">
         </textarea>
-        <input type="submit">
+        <input type="submit" value="Send">
     </form>
     <div class="rightsidebar">Google Ad</div>
     <div class="footer">
